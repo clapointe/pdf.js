@@ -2125,7 +2125,7 @@ function webViewerInitialized() {
  var file;
  var queryString = document.location.search.substring(1);
  var params = parseQueryString(queryString);
- file = 'file' in params ? params.file : appConfig.defaultUrl;
+ file = 'file' in params ? params.file : window.sessionStorage.getItem('pdfUrl');
  validateFileURL(file);
  var waitForBeforeOpening = [];
  var fileInput = document.createElement('input');
