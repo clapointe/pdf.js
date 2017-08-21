@@ -2125,7 +2125,7 @@ function webViewerInitialized() {
  var file;
  var queryString = document.location.search.substring(1);
  var params = parseQueryString(queryString);
- file = 'file' in params ? params.file : window.sessionStorage.getItem('pdfUrl');
+ file = 'file' in params ? params.file : appConfig.defaultUrl;
  validateFileURL(file);
  var waitForBeforeOpening = [];
  var fileInput = document.createElement('input');
@@ -7749,7 +7749,7 @@ exports.ViewHistory = ViewHistory;
 
 "use strict";
 
-var DEFAULT_URL = 'compressed.tracemonkey-pldi-09.pdf';
+var DEFAULT_URL = window.sessionStorage.getItem('pdfUrl');
 ;
 var pdfjsWebApp;
 {
