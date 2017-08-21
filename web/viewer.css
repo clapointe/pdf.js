@@ -277,7 +277,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: url('images/loading-icon.gif') center no-repeat;
+  background: url('../images/pdfviewer/loading-icon.gif') center no-repeat;
 }
 
 .pdfPresentationMode:-webkit-full-screen .pdfViewer .page {
@@ -1815,7 +1815,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 }
 
 .grab-to-pan-grab {
-  cursor: url("images/grab.cur"), move !important;
+  cursor: url("../images/pdfviewer/grab.cur"), move !important;
   cursor: -webkit-grab !important;
   cursor: -moz-grab !important;
   cursor: grab !important;
@@ -1825,7 +1825,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 }
 .grab-to-pan-grab:active,
 .grab-to-pan-grabbing {
-  cursor: url("images/grabbing.cur"), move !important;
+  cursor: url("../images/pdfviewer/grabbing.cur"), move !important;
   cursor: -webkit-grabbing !important;
   cursor: -moz-grabbing !important;
   cursor: grabbing !important;
