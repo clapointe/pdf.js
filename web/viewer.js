@@ -1686,7 +1686,7 @@ var PDFViewerApplication = {
    downloadManager.downloadUrl(url, filename);
   }
   var url = this.baseUrl;
-  var filename = getPDFFileNameFromURL(this.url);
+  var filename = getPDFFileNameFromURL(this.url, this.documentInfo.Title);
   var downloadManager = this.downloadManager;
   downloadManager.onerror = function (err) {
    PDFViewerApplication.error('PDF failed to download.');
