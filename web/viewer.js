@@ -541,6 +541,11 @@ function attachDOMEventsToEventBus(eventBus) {
   event.initCustomEvent('textlayerrendered', true, true, { pageNumber: e.pageNumber });
   e.source.textLayerDiv.dispatchEvent(event);
  });
+ eventBus.on('fileLoadingError', function () {
+  var event = document.createEvent('CustomEvent');
+  event.initCustomEvent('fileLoadingError', true, true, 0);
+  document.dispatchEvent(event);
+ });
  eventBus.on('pagechange', function (e) {
   var event = document.createEvent('UIEvents');
   event.initUIEvent('pagechange', true, true, window, 0);
@@ -1678,6 +1683,7 @@ var PDFViewerApplication = {
    }
    var moreInfo = { message: message };
    self.error(loadingErrorMessage, moreInfo);
+   PDFViewerApplication.eventBus.dispatch("fileLoadingError");
    throw new Error(loadingErrorMessage);
   });
  },
