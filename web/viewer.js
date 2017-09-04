@@ -3403,7 +3403,9 @@ PDFPrintService.prototype = {
      resolve();
      return;
     }
-    print.call(window);
+    var result = document.execCommand('print', false, null);
+    if(!result)  
+     print.call(window);
     setTimeout(resolve, 20);
    }.bind(this), 0);
   }.bind(this));
